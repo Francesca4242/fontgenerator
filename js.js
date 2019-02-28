@@ -24,6 +24,4 @@ document.getElementById('in_text').onchange = function(e) {
 		  loadImage('font_src/'+c.toUpperCase()+'.jpg').then(i => ctx.drawImage(i, thisXPos, 0, 100, 100));
 	    xPos += 100;
 	}
-      
-
 };
