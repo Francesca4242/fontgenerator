@@ -10,7 +10,7 @@ const loadImage = path =>
 
 
 
-document.getElementById('in_text').onchange = function(e) {
+function update() {
 	var canvas = document.getElementById('canvas');
 	var ctx = canvas.getContext("2d");
 	var font = document.getElementById('font').value;
@@ -18,7 +18,7 @@ document.getElementById('in_text').onchange = function(e) {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     let xPos = 0;
-	for (let c of e.target.value) {
+	for (let c of document.getElementById('in_text').value) {
 		let thisXPos = xPos;
 		c = c.toUpperCase();
 		if (c>='A' && c <= 'Z')
@@ -26,3 +26,8 @@ document.getElementById('in_text').onchange = function(e) {
 	    xPos += 100;
 	}
 };
+
+
+document.getElementById('in_text').onchange = update;
+document.getElementById('font').onchange = update;
+
